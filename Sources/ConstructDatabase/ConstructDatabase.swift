@@ -32,36 +32,36 @@ struct ConstructDatabase: ParsableCommand {
         commandName: "ConstructDatabase",
         abstract: "Transforms some input data into two datasets",
         discussion: discussion)
-    static var exampleIdentities: String {
-        var identities: [String: InputCallIdentity] = [:]
+    // static var exampleIdentities: String {
+    //     var identities: [String: InputCallIdentity] = [:]
 
-        identities["+123"] = InputCallIdentity.with { id in
-            id.name = "Adam"
-            id.cacheExpiryMinutes = 8
-            id.block = true
-            id.category = .person
-        }
+    //     identities["+123"] = InputCallIdentity.with { id in
+    //         id.name = "Adam"
+    //         id.cacheExpiryMinutes = 8
+    //         id.block = true
+    //         id.category = .person
+    //     }
 
-        identities["+1234"] = InputCallIdentity.with { id in
-            id.name = "Bob"
-            id.cacheExpiryMinutes = 7
-            id.block = false
-        }
+    //     identities["+1234"] = InputCallIdentity.with { id in
+    //         id.name = "Bob"
+    //         id.cacheExpiryMinutes = 7
+    //         id.block = false
+    //     }
 
-        identities["+12345"] = InputCallIdentity.with { id in
-            id.name = "Grocery Store"
-            id.cacheExpiryMinutes = 18
-            id.block = true
-            id.category = .business
-        }
+    //     identities["+12345"] = InputCallIdentity.with { id in
+    //         id.name = "Grocery Store"
+    //         id.cacheExpiryMinutes = 18
+    //         id.block = true
+    //         id.category = .business
+    //     }
 
-        let example = InputIdentities.with { input in
-            input.identities = identities
-        }
-        return example.textFormatString()
-    }
+    //     let example = InputIdentities.with { input in
+    //         input.identities = identities
+    //     }
+    //     return example.textFormatString()
+    // }
 
-    @Argument(help: "File containing the input data. Example:\n\(exampleIdentities)")
+    @Argument(help: "File containing the input data.")
     var inputFile: String
 
     @Option(help: """

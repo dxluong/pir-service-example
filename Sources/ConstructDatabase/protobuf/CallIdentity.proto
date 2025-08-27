@@ -26,12 +26,16 @@ enum ImageFormat {
 //
 // The system might show identity information differently based on the category.
 enum IdentityCategory {
-  // Unspecified category.
-  IDENTITY_CATEGORY_UNSPECIFIED = 0;
-  // Person category.
-  IDENTITY_CATEGORY_PERSON = 1;
-  // Business category.
-  IDENTITY_CATEGORY_BUSINESS = 2;
+  CATEGORY_UNSPECIFIED = 0;
+  CATEGORY_NORMAL = 1;
+  CATEGORY_ADVERTISING = 2;
+  CATEGORY_LOAN = 3;
+  CATEGORY_DEBT = 4;
+  CATEGORY_CHEAT = 5;
+  CATEGORY_REAL_ESTATE = 6;
+  CATEGORY_OTHER = 7;
+  CATEGORY_SHIPPER = 8;
+  CATEGORY_GRAB = 9;
 }
 
 // Icon
