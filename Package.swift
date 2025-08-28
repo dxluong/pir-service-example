@@ -40,6 +40,8 @@ let package = Package(
         .package(url: "https://github.com/hummingbird-project/hummingbird-compression", from: "2.0.0-rc.2"),
         .package(url: "https://github.com/swift-server/swift-service-lifecycle.git", from: "2.0.0"),
         .package(url: "https://github.com/swiftlang/swift-docc-plugin", from: "1.0.0"),
+        .package(url: "https://github.com/hummingbird-project/hummingbird-fluent.git", from: "2.0.0"),
+        .package(url: "https://github.com/vapor/fluent-sqlite-driver.git", from: "4.8.1"),
     ],
     targets: [
         .executableTarget(
@@ -54,6 +56,8 @@ let package = Package(
                 .product(name: "PrivateInformationRetrievalProtobuf", package: "swift-homomorphic-encryption"),
                 .product(name: "ServiceLifecycle", package: "swift-service-lifecycle"),
                 .product(name: "UnixSignals", package: "swift-service-lifecycle"),
+                .product(name: "HummingbirdFluent", package: "hummingbird-fluent"),
+                .product(name: "FluentSQLiteDriver", package: "fluent-sqlite-driver"),
             ],
             swiftSettings: swiftSettings),
         .testTarget(

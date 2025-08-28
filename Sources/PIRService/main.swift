@@ -16,6 +16,8 @@ import ArgumentParser
 import Foundation
 import Hummingbird
 import ServiceLifecycle
+import FluentSQLiteDriver
+import HummingbirdFluent
 
 // This executable is used in tests, which breaks `swift test -c release` when used with `@main`.
 // So we avoid using `@main` here.
@@ -31,10 +33,19 @@ struct ServerCommand: AsyncParsableCommand {
         let usecaseStore = UsecaseStore()
         let privacyPassState = try PrivacyPassState(userAuthenticator: UserAuthenticator())
 
+        let logger = Logger(label: "PIRService")
+        let fluent = Fluent(logger: logger)
+        // add sqlite database
+        fluent.databases.use(.sqlite(.file("pir.sqlite")), as: .sqlite)
+        let persist = await FluentPersistDriver(fluent: fluent)
+        // run migrations
+        try await fluent.migrate()
+
         let app = try await buildApplication(
             configuration: .init(address: .hostname(hostname, port: port)),
             usecaseStore: usecaseStore,
-            privacyPassState: privacyPassState)
+            privacyPassState: privacyPassState,
+            evaluationKeyStore: persist)
 
         let reloadService = ReloadService(
             configFile: URL(fileURLWithPath: configFile),
