@@ -82,9 +82,9 @@ enum IdentityCategory: SwiftProtobuf.Enum, Swift.CaseIterable {
   case categoryUnspecified // = 0
   case categoryNormal // = 1
   case categoryAdvertising // = 2
-  case categoryLoan // = 3
-  case categoryDebt // = 4
-  case categoryCheat // = 5
+  case categoryFinancialService // = 3
+  case categoryLoanCollection // = 4
+  case categoryScam // = 5
   case categoryRealEstate // = 6
   case categoryOther // = 7
   case categoryShipper // = 8
@@ -100,9 +100,9 @@ enum IdentityCategory: SwiftProtobuf.Enum, Swift.CaseIterable {
     case 0: self = .categoryUnspecified
     case 1: self = .categoryNormal
     case 2: self = .categoryAdvertising
-    case 3: self = .categoryLoan
-    case 4: self = .categoryDebt
-    case 5: self = .categoryCheat
+    case 3: self = .categoryFinancialService
+    case 4: self = .categoryLoanCollection
+    case 5: self = .categoryScam
     case 6: self = .categoryRealEstate
     case 7: self = .categoryOther
     case 8: self = .categoryShipper
@@ -116,9 +116,9 @@ enum IdentityCategory: SwiftProtobuf.Enum, Swift.CaseIterable {
     case .categoryUnspecified: return 0
     case .categoryNormal: return 1
     case .categoryAdvertising: return 2
-    case .categoryLoan: return 3
-    case .categoryDebt: return 4
-    case .categoryCheat: return 5
+    case .categoryFinancialService: return 3
+    case .categoryLoanCollection: return 4
+    case .categoryScam: return 5
     case .categoryRealEstate: return 6
     case .categoryOther: return 7
     case .categoryShipper: return 8
@@ -132,9 +132,9 @@ enum IdentityCategory: SwiftProtobuf.Enum, Swift.CaseIterable {
     .categoryUnspecified,
     .categoryNormal,
     .categoryAdvertising,
-    .categoryLoan,
-    .categoryDebt,
-    .categoryCheat,
+    .categoryFinancialService,
+    .categoryLoanCollection,
+    .categoryScam,
     .categoryRealEstate,
     .categoryOther,
     .categoryShipper,
@@ -208,9 +208,9 @@ extension IdentityCategory: SwiftProtobuf._ProtoNameProviding {
     0: .same(proto: "CATEGORY_UNSPECIFIED"),
     1: .same(proto: "CATEGORY_NORMAL"),
     2: .same(proto: "CATEGORY_ADVERTISING"),
-    3: .same(proto: "CATEGORY_LOAN"),
-    4: .same(proto: "CATEGORY_DEBT"),
-    5: .same(proto: "CATEGORY_CHEAT"),
+    3: .same(proto: "CATEGORY_FINANCIAL_SERVICE"),
+    4: .same(proto: "CATEGORY_LOAN_COLLECTION"),
+    5: .same(proto: "CATEGORY_SCAM"),
     6: .same(proto: "CATEGORY_REAL_ESTATE"),
     7: .same(proto: "CATEGORY_OTHER"),
     8: .same(proto: "CATEGORY_SHIPPER"),
